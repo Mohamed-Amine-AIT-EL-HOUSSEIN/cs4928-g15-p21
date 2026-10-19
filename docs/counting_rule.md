@@ -1,7 +1,7 @@
 # Counting rule — G15 / P21 (M2 reproduction)
 
-**Status:** DRAFT. The group must review and approve this **before anyone counts**.
-Approved by: ____________ Date: ____________ Commit: ____________
+**Status:** APPROVED and frozen. Any change after this is a deviation.
+Approved by: Mohamed Amine AIT EL HOUSSEIN, Yiwen Li, Zhuoya Zhang, Zexu Wang, Eoin Walsh Date: 19/10/2026 Commit: see git log for this file
 
 Once approved and committed, this file does not change. Any later change is a deviation (see `docs/M2_record.md`).
 
