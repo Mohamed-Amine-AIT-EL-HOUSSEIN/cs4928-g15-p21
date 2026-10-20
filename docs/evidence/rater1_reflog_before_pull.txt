@@ -1,0 +1,4 @@
+﻿1e81ead HEAD@{0}: commit: Rater 1 counts complete (all 4 apps, chacker passed)
+75c61e9 HEAD@{1}: commit (merge): Merge branch 'main' of https://github.com/Mohamed-Amine-AIT-EL-HOUSSEIN/cs4928-g15-p21
+49a475d HEAD@{2}: commit: Counting rule approved by group (19/10/2026)
+260b883 HEAD@{3}: commit (initial): M2 kit: scripts, blank count sheets, draft counting rule

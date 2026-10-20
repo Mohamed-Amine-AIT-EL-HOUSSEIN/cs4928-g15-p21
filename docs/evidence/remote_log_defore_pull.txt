@@ -1,0 +1,5 @@
+﻿b3af920 | 2026-10-20 03:15:51 +0100 | Nujs-0927 | Rater 2 counts complete
+75c61e9 | 2026-10-19 16:35:43 +0100 | Mohamed Amine | Merge branch 'main' of https://github.com/Mohamed-Amine-AIT-EL-HOUSSEIN/cs4928-g15-p21 # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+49a475d | 2026-10-19 16:28:44 +0100 | Mohamed Amine | Counting rule approved by group (19/10/2026)
+97053f2 | 2026-10-19 16:23:31 +0100 | Zhuoya Zhang | Create M1_plan.md
+260b883 | 2026-10-19 15:23:59 +0100 | Mohamed Amine | M2 kit: scripts, blank count sheets, draft counting rule
