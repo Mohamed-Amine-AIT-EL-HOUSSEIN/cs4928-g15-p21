@@ -1,0 +1,1 @@
+Found during review on 10/11/2026, before Event B work began: the M4 direction check only examines matched (TP/MATCH) connections. The known Event A direction error (T021, turbine -> rabbitmq, labelled FP) is outside its scope, so audit.json reports 0 reversed connections. M4 was frozen unchanged per the Event B brief; this limitation is carried into Event B.
