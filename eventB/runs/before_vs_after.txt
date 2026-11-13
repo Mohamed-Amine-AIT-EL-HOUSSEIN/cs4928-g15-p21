@@ -1,0 +1,5 @@
+components: 9 -> 9
+connections: 23 -> 24
+  + statement-service -> card-service
+external_components: 2 -> 2
+DIFFERENT

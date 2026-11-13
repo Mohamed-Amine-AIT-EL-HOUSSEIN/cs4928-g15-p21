@@ -1,0 +1,22 @@
+No repository given as parameter.                 
+   You can provide the path as: > python3 code2dfd.py repository/path                 
+Analysing fernandoabcampos/spring-netflix-oss-microservices as specified in config/config.ini
+
+	Start extraction of DFD for fernandoabcampos/spring-netflix-oss-microservices at 03:03:08
+Traceback (most recent call last):
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\code2DFD.py", line 117, in <module>
+    main()
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\code2DFD.py", line 107, in main
+    dfd_extraction.perform_analysis()
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\core\dfd_extraction.py", line 61, in perform_analysis
+    microservices = tech_sw.get_microservices(dfd)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\core\technology_switch.py", line 26, in get_microservices
+    mvn.set_microservices(dfd)
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\technology_specific_extractors\maven\mvn_entry.py", line 28, in set_microservices
+    pom_files = fi.get_file_as_lines("pom.xml")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\study\26fall\cs4928\eventB_work\tools\code2DFD\core\file_interaction.py", line 527, in get_file_as_lines
+    for line in stdout.decode().splitlines():
+                ^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb2 in position 6: invalid start byte

@@ -1,0 +1,4 @@
+components: 9 -> 9
+connections: 23 -> 23
+external_components: 2 -> 2
+IDENTICAL

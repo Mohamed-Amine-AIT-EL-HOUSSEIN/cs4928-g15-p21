@@ -1,0 +1,20 @@
+{
+  "source_labels": "eventA\\results\\final_labels.csv",
+  "source_metrics": "eventA\\results\\metrics.csv",
+  "endpoint_coverage": {
+    "status": "no_tool_endpoints_reported",
+    "reference_count": 17,
+    "reported_count": 0,
+    "TP": 0,
+    "FP": 0,
+    "FN": 17,
+    "precision": null
+  },
+  "directed_edge_validation": {
+    "checked_matched_rows": 42,
+    "reverse_edge_errors": [],
+    "limitation": "This only checks connections that are exactly reversed. Different service names still need to be checked manually."
+  },
+  "frozen_overall_F1": 0.7441860465116279,
+  "note": "This is an extra check. It does not change our original labels or precision, recall and F1 scores."
+}

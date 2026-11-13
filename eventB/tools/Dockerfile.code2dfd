@@ -1,0 +1,8 @@
+# Linux runtime for Code2DFD (fork M3SOulu/EMSE2025SAR-code2DFD @ 39763f4).
+# Code2DFD shells out to GNU `find` and `grep`, which Windows does not provide,
+# so the tool is run here instead of natively. Same Python minor and package
+# versions as the Windows venv recorded in Z1_setup_notes.md.
+FROM python:3.12-slim
+RUN pip install --no-cache-dir Flask==3.1.3 plantuml==0.3.0 PyYAML==6.0.3 requests==2.34.2 ruamel.yaml==0.19.1 six==1.17.0
+WORKDIR /work
+ENTRYPOINT ["python", "code2DFD.py"]

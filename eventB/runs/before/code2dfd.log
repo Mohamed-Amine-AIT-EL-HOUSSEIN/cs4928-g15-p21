@@ -1,0 +1,31 @@
+INFO 2026-11-13 03:14:19,219 - *** New execution ***
+DEBUG 2026-11-13 03:14:19,219 - Copying config file to tmp file
+INFO 2026-11-13 03:14:19,222 - Microservices not set yet, start extraction
+INFO 2026-11-13 03:14:19,661 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/card-service/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,699 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,731 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/config-server/src/main/resources/application.yml
+INFO 2026-11-13 03:14:19,734 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/config-server/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,763 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/discovery-service/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,798 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/edge-server/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,831 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/monitor-dashboard/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,864 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/statement-service/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:19,901 - Found properties file here: ./analysed_repositories/spring-netflix-oss-microservices/turbine/src/main/resources/bootstrap.yml
+INFO 2026-11-13 03:14:25,571 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/config-server/pom.xml
+INFO 2026-11-13 03:14:26,387 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/discovery-service/pom.xml
+INFO 2026-11-13 03:14:28,684 - Information flows not set yet, start extraction
+INFO 2026-11-13 03:14:32,190 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/pom.xml
+INFO 2026-11-13 03:14:32,942 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/pom.xml
+INFO 2026-11-13 03:14:32,972 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/pom.xml
+INFO 2026-11-13 03:14:34,887 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/discovery-service/pom.xml
+INFO 2026-11-13 03:14:36,824 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/statement-service/pom.xml
+INFO 2026-11-13 03:14:36,850 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-service/pom.xml
+INFO 2026-11-13 03:14:36,876 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/monitor-dashboard/pom.xml
+INFO 2026-11-13 03:14:36,906 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/edge-server/pom.xml
+INFO 2026-11-13 03:14:36,938 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/turbine/pom.xml
+INFO 2026-11-13 03:14:36,969 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/pom.xml
+INFO 2026-11-13 03:14:38,361 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/edge-server/pom.xml
+INFO 2026-11-13 03:14:42,059 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/monitor-dashboard/pom.xml
+INFO 2026-11-13 03:14:42,825 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/turbine/pom.xml
+INFO 2026-11-13 03:14:43,595 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/turbine/pom.xml
+INFO 2026-11-13 03:14:50,477 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/card-statement-composite/pom.xml
+INFO 2026-11-13 03:14:52,947 - Found pom.xml here: ./analysed_repositories/spring-netflix-oss-microservices/monitor-dashboard/pom.xml

@@ -1,0 +1,100 @@
+{
+    "edges": [
+        {
+            "sender": "github-repository",
+            "receiver": "config-server"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "card-service"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "card-statement-composite"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "edge-server"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "monitor-dashboard"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "statement-service"
+        },
+        {
+            "sender": "config-server",
+            "receiver": "turbine"
+        },
+        {
+            "sender": "statement-service",
+            "receiver": "card-service"
+        },
+        {
+            "sender": "monitor",
+            "receiver": "rabbitmq"
+        },
+        {
+            "sender": "turbine",
+            "receiver": "rabbitmq"
+        },
+        {
+            "sender": "card-statement-composite",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "statement-service",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "card-service",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "turbine",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "monitor-dashboard",
+            "receiver": "discovery-service"
+        },
+        {
+            "sender": "discovery-service",
+            "receiver": "edge-server"
+        },
+        {
+            "sender": "user",
+            "receiver": "edge-server"
+        },
+        {
+            "sender": "edge-server",
+            "receiver": "user"
+        },
+        {
+            "sender": "edge-server",
+            "receiver": "card-statement-composite"
+        },
+        {
+            "sender": "edge-server",
+            "receiver": "statement-service"
+        },
+        {
+            "sender": "edge-server",
+            "receiver": "card-service"
+        },
+        {
+            "sender": "turbine",
+            "receiver": "monitor-dashboard"
+        },
+        {
+            "sender": "rabbitmq",
+            "receiver": "turbine"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+components: 9 -> 9
+connections: 23 -> 20
+  - edge-server -> card-service
+  - edge-server -> card-statement-composite
+  - edge-server -> statement-service
+external_components: 2 -> 2
+DIFFERENT

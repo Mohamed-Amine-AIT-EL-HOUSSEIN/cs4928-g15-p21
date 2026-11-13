@@ -1,0 +1,21 @@
+diff --git a/statement-service/src/main/java/com/spring/netflix/oss/microservices/service/CardLookup.java b/statement-service/src/main/java/com/spring/netflix/oss/microservices/service/CardLookup.java
+new file mode 100644
+index 0000000..3c49f7a
+--- /dev/null
++++ b/statement-service/src/main/java/com/spring/netflix/oss/microservices/service/CardLookup.java
+@@ -0,0 +1,15 @@
++package com.spring.netflix.oss.microservices.service;
++
++import org.springframework.stereotype.Component;
++import org.springframework.web.client.RestTemplate;
++
++// Event B (G15/P21): the one new communication link, statement-service -> card-service.
++@Component
++public class CardLookup {
++
++	private final RestTemplate restTemplate = new RestTemplate();
++
++	public String getCard(Long cardId) {
++		return restTemplate.getForObject("http://card-service/api/card/" + cardId, String.class);
++	}
++}

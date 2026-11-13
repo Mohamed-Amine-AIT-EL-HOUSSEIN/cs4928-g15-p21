@@ -1,0 +1,48 @@
+
+@startuml
+skinparam monochrome true
+skinparam ClassBackgroundColor White
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+
+digraph dfd2{
+    node[shape=record]
+        card_service [label = "{Service: card_service | --internal--\n'Endpoints': ['/api/new-card'\n}" shape = Mrecord];
+        card_statement_composite [label = "{Service: card_statement_composite | --internal--\n--circuit_breaker--\n'Endpoints': ['/new-card'\n}" shape = Mrecord];
+        config_server [label = "{Service: config_server | --infrastructural--\n--configuration_server--\n'Port': 9090\n'Configuration Server': 'Spring Cloud Config'\n}" shape = Mrecord];
+        discovery_service [label = "{Service: discovery_service | --service_discovery--\n--infrastructural--\n'Service Discovery': 'Eureka'\n'Port': 8761\n}" shape = Mrecord];
+        edge_server [label = "{Service: edge_server | --gateway--\n--infrastructural--\n--load_balancer--\n'Port': 8765\n'Load Balancer': 'Ribbon'\n'Gateway': 'Zuul'\n}" shape = Mrecord];
+        monitor_dashboard [label = "{Service: monitor_dashboard | --infrastructural--\n--monitoring_dashboard--\n'Port': 8179\n'Monitoring Dashboard': 'Hystrix'\n'Endpoints': ['/']\n}" shape = Mrecord];
+        statement_service [label = "{Service: statement_service | --internal--\n'Endpoints': ['/api/statement/\n}" shape = Mrecord];
+        turbine [label = "{Service: turbine | --infrastructural--\n--monitoring_server--\n'Port': 8989\n'Monitoring Server': 'Turbine'\n}" shape = Mrecord];
+        rabbitmq [label = "{Service: rabbitmq | --infrastructural--\n--message_broker--\n'Port': 5672\n'Message Broker': 'RabbitMQ'\n}" shape = Mrecord];
+        github_repository [label = "{External Entity: github_repository | --github_repository--\n--entrypoint--\n'URL': 'https\n}"];
+        user [label = "{External Entity: user | --user_stereotype--\n--exitpoint--\n--entrypoint--\n}"];
+        github_repository -> config_server [label = " --restful_http--\n"]
+        config_server -> card_service [label = " --restful_http--\n"]
+        config_server -> card_statement_composite [label = " --restful_http--\n"]
+        config_server -> discovery_service [label = " --restful_http--\n"]
+        config_server -> edge_server [label = " --restful_http--\n"]
+        config_server -> monitor_dashboard [label = " --restful_http--\n"]
+        config_server -> statement_service [label = " --restful_http--\n"]
+        config_server -> turbine [label = " --restful_http--\n"]
+        statement_service -> card_service [label = " --restful_http--\n"]
+        monitor -> rabbitmq [label = " --restful_http--\n"]
+        turbine -> rabbitmq [label = " --restful_http--\n"]
+        card_statement_composite -> discovery_service [label = " --restful_http--\n--circuit_breaker_link--\n"]
+        statement_service -> discovery_service [label = " --restful_http--\n"]
+        card_service -> discovery_service [label = " --restful_http--\n"]
+        turbine -> discovery_service [label = " --restful_http--\n"]
+        monitor_dashboard -> discovery_service [label = " --restful_http--\n"]
+        discovery_service -> edge_server [label = " --restful_http--\n"]
+        user -> edge_server [label = " --restful_http--\n"]
+        edge_server -> user [label = " --restful_http--\n"]
+        edge_server -> card_statement_composite [label = " --restful_http--\n"]
+        edge_server -> statement_service [label = " --restful_http--\n"]
+        edge_server -> card_service [label = " --restful_http--\n"]
+        turbine -> monitor_dashboard [label = " --restful_http--\n"]
+        rabbitmq -> turbine [label = " --restful_http--\n"]
+
+}
+@enduml

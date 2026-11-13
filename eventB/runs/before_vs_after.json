@@ -1,0 +1,26 @@
+{
+  "components": {
+    "old_count": 9,
+    "new_count": 9,
+    "added": [],
+    "removed": []
+  },
+  "connections": {
+    "old_count": 23,
+    "new_count": 24,
+    "added": [
+      [
+        "statement-service",
+        "card-service"
+      ]
+    ],
+    "removed": [],
+    "direction_flipped": []
+  },
+  "external_components": {
+    "old_count": 2,
+    "new_count": 2,
+    "added": [],
+    "removed": []
+  }
+}
