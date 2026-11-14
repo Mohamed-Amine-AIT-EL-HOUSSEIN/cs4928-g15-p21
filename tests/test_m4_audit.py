@@ -1,10 +1,11 @@
 import csv
+import json
 import tempfile
 import unittest
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from m4_audit import directed_edge, audit
+from scripts.m4_audit import directed_edge, audit, change_visibility
 
 class M4AuditTests(unittest.TestCase):
     def test_direction_matters(self):
@@ -34,6 +35,45 @@ class M4AuditTests(unittest.TestCase):
         self.assertEqual(result['endpoint_coverage']['reported_count'], 0)
         self.assertAlmostEqual(result['frozen_overall_F1'], 0.7441860465116279)
         self.assertFalse(result['directed_edge_validation']['reverse_edge_errors'])
+
+    def _run(self, tmp, name, flows):
+        path = Path(tmp) / name
+        path.write_text(json.dumps({'microservices': {'0': {'servicename': 'a'}, '1': {'servicename': 'b'}},
+                                    'external_components': {},
+                                    'information_flows': {str(i): {'sender': s, 'receiver': r}
+                                                          for i, (s, r) in enumerate(flows)}}))
+        return path
+
+    def test_new_link_is_named(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            before = self._run(tmp, 'before.json', [('a', 'b')])
+            after = self._run(tmp, 'after.json', [('b', 'a'), ('a', 'b')])  # new link, IDs shuffled
+            labels = [{'id': 'G001', 'characteristic': 'connection', 'item': 'a -> b'}]
+            result = change_visibility(before, after, labels)
+            self.assertEqual(result['connections_added'],
+                             [{'connection': 'b -> a', 'in_reference_labels': False}])
+            self.assertEqual(result['connections_removed'], [])
+
+    def test_no_change_gives_empty_diff(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            before = self._run(tmp, 'before.json', [('a', 'b')])
+            result = change_visibility(before, before, [])
+            self.assertEqual(result['connections_added'], [])
+            self.assertEqual(result['components_added'], [])
+
+    def test_real_event_b_runs(self):
+        root = Path(__file__).resolve().parents[1]
+        runs = root / 'eventB' / 'runs'
+        name = 'fernandoabcampos--spring-netflix-oss-microservices.json'
+        if not (runs / 'before' / name).exists():
+            self.skipTest('Event B runs not present')
+        with open(root / 'eventA/results/final_labels.csv', newline='', encoding='utf-8') as f:
+            labels = list(csv.DictReader(f))
+        result = change_visibility(runs / 'before' / 'dict_fernandoabcampos_spring-netflix-oss-microservices.txt',
+                                   runs / 'after' / 'dict_fernandoabcampos_spring-netflix-oss-microservices.txt', labels)
+        self.assertEqual(result['connections_added'],
+                         [{'connection': 'statement_service -> card_service', 'in_reference_labels': False}])
+        self.assertEqual(result['connections_removed'], [])
 
 if __name__ == '__main__':
     unittest.main()
