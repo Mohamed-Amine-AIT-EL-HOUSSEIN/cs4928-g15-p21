@@ -46,7 +46,7 @@ tests/                  unit tests for m4_audit.py
 | `M2_REPRO` | `c1a9b2b` | 20/10/2026 | Bounded reproduction complete |
 | `PRE_EVENT_A` | `c1a9b2b` | 20/10/2026 | Frozen state before Change Event A |
 | `PRE_EVENT_B` | `09a3143` | 11/11/2026 | Frozen M4 state before Change Event B |
-| `FINAL` | — | — | Final submission |
+| `FINAL` | `ba83f5c` | 19/11/2026 | Final submission |
 
 Predictions were committed before the work they predict: Event A `c126ca8` (before any App 6 counting), Event B `e7b8371` (before any Code2DFD run).
 
